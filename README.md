@@ -1,7 +1,9 @@
 # logo
 
 **To use the script only import inside tag HEAD**
-<script src="logotooltip.js"></script>
+
+`<script src="logotooltip.js"></script>`
+
 **modify the next properties if you need to change de functionality**
 
 > Text to display in the Tooltip
