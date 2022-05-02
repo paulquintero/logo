@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 class LogoToolTip {
     textTooltip = "'Powered by wiringbits'";
-    hrefLogo = "https://wiringbits.net/?utm_medium=referrer&utm_source=xsnexplorer.io";
-    srcImage = "https://wiringbits.net/assets/home/named_icon.png";
+    hrefLogo = `https://wiringbits.net/?utm_medium=referrer&utm_source=${window.location.hostname}`;
+    srcImage = "https://raw.githubusercontent.com/paulquintero/logo/75b9d2ccb0c2d743504448224c68cc126f2acb1b/logo.png";
 
     bakgroundTooltip = "#73d8ff";
     colorTextTooltip = "#000000";
@@ -15,42 +15,36 @@ class LogoToolTip {
     highLight ="wiringbitsHighlight";
     link = "wiringbitsLogoLink";
     backGroundStyle = "background-image: linear-gradient(to bottom right, #60d3ff, #ffffff);";
-    alignLogoBottom = "0";
-    alignLogoRight = "0";
+    alignLogoBottom = "5px";
+    alignLogoRight = "5px";
     width = "50px;";
-    height = "50px;";
+    height = "50px";
     borderRadius = "8px";
     constructor() {
 
     }
-    styleRandomId() {
-        return (Math.floor(Math.random() * 10000) + 10000).toString().substring(1);
-    }
+    
     styleMainContainer() {
-        console.log(this.textTooltip);
         var style = document.createElement("style");
         style.innerHTML = `.${this.mainContainer} {width: ${this.width};  height: ${this.height};}
             .${this.mainContainer}:hover {  width: auto;  height: auto;}
             .${this.mainContainer}::before {  visibility: hidden;}
-            :hover.${this.mainContainer}::before {  content: ${this.textTooltip};  margin-right: 70px;  margin-bottom: 15px;  background: ${this.bakgroundTooltip};  border-radius: ${this.borderRadius};  padding: 6px;  color: ${this.colorTextTooltip};  font-weight: 700;  border: 2px solid #3f3f3f;  visibility: visible;  display: block;  box-shadow:  0px 0px 7px 2px #2e9efd;}
+            :hover.${this.mainContainer}::before {  content: ${this.textTooltip};  margin-right: 70px;  margin-bottom: 11px;  background: ${this.bakgroundTooltip};  border-radius: ${this.borderRadius};  padding: 5px;  color: ${this.colorTextTooltip};  font-weight: 700;  border: 2px solid #3f3f3f;  visibility: visible;  display: block;  box-shadow:  0px 0px 7px 2px #2e9efd;}
             `;
-        console.log(style.innerHTM);
         document.getElementsByTagName('head')[0].appendChild(style);
         return style;
     }
     styleFixed() {
         let style = document.createElement("style");
         style.innerHTML = `.${this.fixed} {  bottom: ${this.alignLogoBottom};  right: ${this.alignLogoRight};  position: fixed;  z-index: 100;} `;
-        console.log(style.innerHTM);
         document.getElementsByTagName('head')[0].appendChild(style);
         return style;
     }
     styleFloatLogo() {
         let style = document.createElement("style");
         style.innerHTML =
-            `.${this.floatLogo} {  background-color: #fff;  border-radius: 34px;  border: 3px solid #3f3f3f;  ${this.backGroundStyle}  padding: 4px;}
+            `.${this.floatLogo} {  background-color: #fff;  border-radius: 34px;  border: 3px solid #3f3f3f;  ${this.backGroundStyle}  padding: 2px;}
             .${this.floatLogo} img {  width: ${this.width};  height: ${this.height};  object-fit: contain;}`;
-        console.log(style.innerHTM);
         document.getElementsByTagName('head')[0].appendChild(style);
         return style;
     }
@@ -63,8 +57,7 @@ class LogoToolTip {
 
     styleLink() {
         let style = document.createElement("style");
-        style.innerHTML = `.${this.link} {  text-decoration: none;  font-size: 18px;  color: #fff;}`;
-        console.log(style.innerHTM);
+        style.innerHTML = `.${this.link} {  text-decoration: none;  font-size: 18px;  color: #fff; display:flex;}`;
         document.getElementsByTagName('head')[0].appendChild(style);
         return style;
     }
