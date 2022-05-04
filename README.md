@@ -10,7 +10,7 @@
 `textTooltip = "'Powered by wiringbits'";`
 
 > Page to redirect
-`hrefLogo = "https://wiringbits.net/?utm_medium=referrer&utm_source=xsnexplorer.io";`
+`hrefLogo = "https://wiringbits.net/?utm_medium=referrer&utm_source=${window.location.hostname}";`
 
 > ref to the logo image (i recommend you use a image transparent)
-`srcImage = "https://wiringbits.net/assets/home/named_icon.png";`
+`srcImage = "https://raw.githubusercontent.com/paulquintero/logo/75b9d2ccb0c2d743504448224c68cc126f2acb1b/logo.png";`
